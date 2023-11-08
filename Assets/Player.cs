@@ -32,35 +32,38 @@ public class Player : MonoBehaviour
 
     }
 
-    
+
 
     public void updateVisuals()
     {
 
-        
 
+        
         //get inputs
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A )       ||  Input.GetKeyDown(KeyCode.LeftArrow)  )
         {
             assign_player_position(x_direction: -1f);
-             Debug.Log("you have uped");
+            Debug.Log("you have uped");
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             assign_player_position(x_direction: 1f);
             Debug.Log("you have righted");
 
         }
-        if(Input.GetButtonDown("Jump")){
+        if (Input.GetButtonDown("Jump"))
+        {
             Debug.Log("you have jumped");
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             assign_player_position(y_direction: 1f);
             Debug.Log("you have uped");
 
         }
-        }
+        
+        
+    }
 }
 
 
