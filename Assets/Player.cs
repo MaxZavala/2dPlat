@@ -25,10 +25,10 @@ public class Player : MonoBehaviour
 
     }
 
-    public void assign_player_position(float x_direction) {
+    public void assign_player_position(float x_direction=0f, float y_direction=0f) {
 
        
-        playerTransform.position = new Vector3(playerTransform.position.x + x_direction, playerTransform.position.y, playerTransform.position.z);
+        playerTransform.position = new Vector3(playerTransform.position.x + x_direction, playerTransform.position.y+ y_direction, playerTransform.position.z);
 
     }
 
@@ -42,18 +42,25 @@ public class Player : MonoBehaviour
         //get inputs
         if (Input.GetKeyDown(KeyCode.A))
         {
-            assign_player_position(-1f);
+            assign_player_position(x_direction: -1f);
+             Debug.Log("you have uped");
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            assign_player_position(1f);
+            assign_player_position(x_direction: 1f);
+            Debug.Log("you have righted");
 
         }
-      
-            
-  
+        if(Input.GetButtonDown("Jump")){
+            Debug.Log("you have jumped");
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            assign_player_position(y_direction: 1f);
+            Debug.Log("you have uped");
 
-    }
+        }
+        }
 }
 
 
