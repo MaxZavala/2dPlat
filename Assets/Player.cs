@@ -27,9 +27,11 @@ public class Player : MonoBehaviour
 
     public void assign_player_position(float x_direction=0f, float y_direction=0f) {
 
-       
-        playerTransform.position = new Vector3(playerTransform.position.x + x_direction, playerTransform.position.y+ y_direction, playerTransform.position.z);
-
+        if (playerTransform != null)
+        {
+            playerTransform.position = new Vector3(playerTransform.position.x + x_direction, playerTransform.position.y + y_direction, playerTransform.position.z);
+        }
+        else { playerTransform = this.transform; }
     }
 
 
